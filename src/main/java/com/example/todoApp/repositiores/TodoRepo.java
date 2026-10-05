@@ -1,13 +1,13 @@
 package com.example.todoApp.repositiores;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.example.todoApp.schema.Todo;
 
 import java.util.ArrayList;
 
-@Component 
+@Repository 
 public class TodoRepo {
     private List<Todo> todoData = new ArrayList<>();
 
@@ -19,6 +19,22 @@ public class TodoRepo {
    
     public List<Todo> getAllTodos(){
         return todoData;
+    }
+
+    public void addTodoRepo(int id, String desc){
+        todoData.add(new Todo(id,desc));
+    }
+    
+    public void deleteTodo(int id){
+        todoData.removeIf(todo -> todo.getId() == id); 
+    }
+    
+    public void UpdateTodo(int id, String newDesc){
+       for(int i=0; i<todoData.size(); i++){
+        if(todoData.get(i).getId() == id){
+            todoData.get(i).setDesc(newDesc);
+        }
+       }
     }
 
 }

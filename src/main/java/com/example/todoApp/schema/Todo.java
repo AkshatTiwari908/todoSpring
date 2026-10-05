@@ -2,7 +2,7 @@ package com.example.todoApp.schema;
 
 public class Todo {
    private final int id;
-   private final String desc;
+   private String desc;
 
    public Todo(int id, String desc){
     this.id = id;
@@ -15,5 +15,9 @@ public class Todo {
 
    public String getDesc() {
       return desc;
+   }
+   
+   public void setDesc(String desc){
+      this.desc = desc;
    }
 }

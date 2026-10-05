@@ -18,4 +18,15 @@ public class TodoService {
        return todo_repo.getAllTodos();
     }
     
+    public void addTodoLogic(int id, String desc){
+       todo_repo.addTodoRepo(id, desc);
+    }
+
+    public void deleteToDoLogic(int id){
+        todo_repo.deleteTodo(id);
+    }
+
+    public void updateTodoLogic(int id, String desc){
+        todo_repo.UpdateTodo(id, desc);
+    }
 }
